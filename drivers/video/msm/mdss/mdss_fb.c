@@ -1455,6 +1455,8 @@ static int mdss_fb_blank_unblank(struct msm_fb_data_type *mfd)
 			 */
 			mfd->allow_bl_update = false;
 		}
+		mutex_unlock(&mfd->bl_lock);
+	}
 	#endif
 error:
 	return ret;
